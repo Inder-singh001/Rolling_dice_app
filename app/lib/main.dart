@@ -38,12 +38,37 @@ class _MyhomepageState extends State<Myhomepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(219, 163, 241, 239),
+      drawer: NavigationDrawer(
+        backgroundColor: Color.fromARGB(201, 200, 207, 225),
+        children: [
+          Center(
+            child: ListTile(
+              title: Center(
+                child: Column(
+                  children: [
+                    Text(
+                      'version',
+                      style: TextStyle(fontSize: 24),
+                    ),
+                    Text('v1.0.1')
+                  ],
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 79, 45, 250),
         title: Center(
-          child: Text(
-            'Rolling Dice',
-            style: TextStyle(fontSize: 28),
+          child: Row(
+            children: [
+              Column(),
+              Text(
+                'Rolling Dice',
+                style: TextStyle(fontSize: 28),
+              ),
+            ],
           ),
         ),
       ),
