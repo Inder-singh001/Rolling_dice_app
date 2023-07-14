@@ -18,5 +18,7 @@ Download abovr requirements through [Flutter Installation Documentation](https:/
 ### Steps to contribute  
 1. Forks this repository to your own Github account
 2. Clone your forked repository bu copying the URL and rum the folling command on your cmd.
+
 ``git clone URL                          ``
+
 3. 
