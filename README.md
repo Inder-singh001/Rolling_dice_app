@@ -12,7 +12,11 @@ Steps to install the app-
 ### Pre-requisite
 - Flutter (framework)
 - Android Studio and Emulator
-- Visual Studio Code
-Download abovr requirements through (https://docs.flutter.dev/get-started/install)[Flutter Installation Documentation]
+- Visual Studio Code 
+
+Download abovr requirements through [Flutter Installation Documentation](https://docs.flutter.dev/get-started/install)
 ### Steps to contribute  
-#### 1. Forks this repository to your own Github account
+1. Forks this repository to your own Github account
+2. Clone your forked repository bu copying the URL and rum the folling command on your cmd.
+``git clone URL                          ``
+3. 
