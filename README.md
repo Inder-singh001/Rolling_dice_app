@@ -1,5 +1,5 @@
 # Rolling_dice_app
-The Rolling Dice App provides you a virtual dice for your ec=very chance games. It works similarly as your physical dice.
+The Rolling Dice App is a virtual dice for all your chance games. This app brings the convenience and excitement of rolling dice to your mobile device, offering a virtual alternative to physical dice.
 
 ## Installation 
 Steps to install the app-
