@@ -32,7 +32,7 @@ flutter pub get
 ```
 4. Set up an Emulator
 - Launch your device to run the app in Visual Studio Code at :
-![Emulator][def]
+![Emulator](./Images_Readme/emulator.png)
 
 5. Run the app using the following command in the terminal:
 ```
