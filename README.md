@@ -32,7 +32,7 @@ flutter pub get
 ```
 4. Set up an Emulator
 - Launch your device to run the app in Visual Studio Code at :
-![Emulator](./Images_Readme/emulator.png)
+![Emulator][def]
 
 5. Run the app using the following command in the terminal:
 ```
@@ -42,3 +42,5 @@ flutter run
 6. Make the desired changes and enhancements, and push your changes to the origin repository.
 
 Thank you for considering contributing to the Rolling Dice App. Your contributions are highly appreciated.
+
+[def]: ./Images_Readme/emulator.png
