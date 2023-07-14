@@ -19,6 +19,22 @@ Download abovr requirements through [Flutter Installation Documentation](https:/
 1. Forks this repository to your own Github account
 2. Clone your forked repository bu copying the URL and rum the folling command on your cmd.
 
-``git clone URL                          ``
+```
+git clone URL                          
+```
 
-3. 
+3. Set up development ecnvironment
+- run the following command:
+```
+flutter pub get
+```
+4. Set up an Emulator
+- Lauch your device to run the app in Visual Studio Code at :
+![Emulator](./Images_Readme/emulator.png)
+
+5. Run the command in the terminal:
+```
+flutter run 
+```
+
+6. Make the required changes you want and push it to the origin rrpository.
