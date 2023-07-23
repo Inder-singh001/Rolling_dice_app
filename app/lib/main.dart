@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_typing_uninitialized_variables, unused_field
 
 import 'package:flutter/material.dart';
+
 import 'package:rolling_dice/double_dice.dart';
 import 'package:rolling_dice/single_dice.dart';
 // import 'dart:math';
@@ -31,15 +32,15 @@ class Myhomepage extends StatefulWidget {
   State<Myhomepage> createState() => _MyhomepageState();
 }
 
-class _MyhomepageState extends State<Myhomepage> {
-  // }
+class _MyhomepageState extends State<Myhomepage> with TickerProviderStateMixin {
+  double _size = 150;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(219, 163, 241, 239),
+      backgroundColor: Color.fromARGB(219, 255, 255, 255),
       drawer: NavigationDrawer(
-        backgroundColor: Color.fromARGB(201, 200, 207, 225),
+        backgroundColor: Color.fromARGB(197, 254, 255, 255),
         children: [
           Center(
             child: ListTile(
@@ -59,46 +60,52 @@ class _MyhomepageState extends State<Myhomepage> {
         ],
       ),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 79, 45, 250),
-        title: Center(
-          child: Row(
-            children: [
-              Column(),
-              Text(
-                'Rolling Dice',
-                style: TextStyle(fontSize: 28),
-              ),
-            ],
-          ),
+        backgroundColor: Color.fromARGB(255, 31, 124, 91),
+        title: Text(
+          'Rolling Dice',
+          style: TextStyle(fontSize: 28),
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Center(
-              child: Row(
+      body: LayoutBuilder(builder: (context, constraints) {
+        double pixelratio = MediaQuery.of(context).devicePixelRatio;
+        double padding = pixelratio * 8;
+        //Responisiveness
+        double width = constraints.maxWidth;
+        double height = constraints.maxHeight;
+
+        _size = (width < height) ? width / 3 : height / 3;
+
+        return Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   InkWell(
-                    child: Container(
-                      width: 150,
-                      height: 150,
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                        border: Border.all(
-                            strokeAlign: BorderSide.strokeAlignOutside,
-                            style: BorderStyle.solid,
-                            width: 10.0,
-                            color: Color.fromARGB(44, 38, 37, 39)),
-                      ),
-                      margin: EdgeInsets.all(15.0),
-                      padding: EdgeInsets.all(8.0),
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Image.asset('assets/images/dice.png'),
+                    child: AnimatedSize(
+                      curve: Curves.elasticOut,
+                      duration: Duration(seconds: 1),
+                      child: Container(
+                        width: _size,
+                        height: _size,
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(padding)),
+                          border: Border.all(
+                              strokeAlign: BorderSide.strokeAlignOutside,
+                              style: BorderStyle.solid,
+                              width: pixelratio * 4,
+                              color: Color.fromARGB(44, 38, 37, 39)),
+                        ),
+                        margin: EdgeInsets.all(padding),
+                        padding: EdgeInsets.all(padding),
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: EdgeInsets.all(padding / 10),
+                          child: Image.asset('assets/images/dice.png'),
+                        ),
                       ),
                     ),
                     onTap: () {
@@ -110,59 +117,60 @@ class _MyhomepageState extends State<Myhomepage> {
                   ),
                 ],
               ),
-            ),
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.all(30.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    InkWell(
-                      child: Container(
-                        width: 150,
-                        height: 150,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                          border: Border.all(
-                              strokeAlign: BorderSide.strokeAlignOutside,
-                              style: BorderStyle.solid,
-                              width: 10.0,
-                              color: Color.fromARGB(44, 38, 37, 39)),
+              Center(
+                child: Padding(
+                  padding: EdgeInsets.all(padding),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        child: Container(
+                          width: _size,
+                          height: _size,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(padding)),
+                            border: Border.all(
+                                strokeAlign: BorderSide.strokeAlignOutside,
+                                style: BorderStyle.solid,
+                                width: pixelratio * 4,
+                                color: Color.fromARGB(44, 38, 37, 39)),
+                          ),
+                          margin: EdgeInsets.all(padding),
+                          padding: EdgeInsets.all(padding),
+                          alignment: Alignment.centerRight,
+                          child: Padding(
+                            padding: EdgeInsets.all(padding / 10),
+                            child: Image.asset('assets/images/dice_double.png'),
+                          ),
                         ),
-                        margin: EdgeInsets.all(15.0),
-                        padding: EdgeInsets.all(8.0),
-                        alignment: Alignment.centerRight,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Image.asset('assets/images/dice_double.png'),
-                        ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => double_dice()),
+                          );
+                        },
                       ),
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => double_dice()),
-                        );
-                      },
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(32.0),
-              child: Text(
-                'Choose your Dice!',
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    decorationColor: Color.fromARGB(202, 37, 95, 255)),
-              ),
-            )
-          ],
-        ),
-      ),
+              Padding(
+                padding: EdgeInsets.all(padding * 2),
+                child: Text(
+                  'Choose your Dice!',
+                  style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      decorationColor: Color.fromARGB(202, 37, 95, 255)),
+                ),
+              )
+            ],
+          ),
+        );
+      }),
     );
   }
 }
