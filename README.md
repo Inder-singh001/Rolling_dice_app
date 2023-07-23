@@ -1,7 +1,11 @@
 # Rolling_dice_app
 The Rolling Dice App is your go-to virtual dice for all your chance games. This app brings the convenience and excitement of rolling dice to your mobile device, offering a virtual alternative to physical dice.
 
-## Installation 
+## Web-App
+You can access the app by clicking on the following link:<br>
+[Rolling Dice Web App](https://rolling-dice-74178.web.app/)
+
+## Installation for Andriod Users
 To install the app, follow these steps:
 
 1. Go to the "Release" section of the repository.
