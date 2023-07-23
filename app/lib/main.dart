@@ -51,7 +51,7 @@ class _MyhomepageState extends State<Myhomepage> with TickerProviderStateMixin {
                       'version',
                       style: TextStyle(fontSize: 24),
                     ),
-                    Text('v1.0.1')
+                    Text('v2.1.1')
                   ],
                 ),
               ),
