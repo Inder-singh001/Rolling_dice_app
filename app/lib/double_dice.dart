@@ -14,6 +14,7 @@ class _double_diceState extends State<double_dice>
     with TickerProviderStateMixin {
   var leftdicenum = 1;
   var rightdicenum = 1;
+  int totalcount = 0;
   // var currentTabIndex = 0;
 
   void roll() {
@@ -21,6 +22,12 @@ class _double_diceState extends State<double_dice>
       leftdicenum = Random().nextInt(6) + 1;
       rightdicenum = Random().nextInt(6) + 1;
       _controller.forward(from: 0.0);
+    });
+  }
+
+  void count() {
+    setState(() {
+      totalcount = leftdicenum + rightdicenum;
     });
   }
 
@@ -90,7 +97,10 @@ class _double_diceState extends State<double_dice>
                   style: ElevatedButton.styleFrom(
                     primary: const Color.fromARGB(255, 31, 124, 91),
                   ),
-                  onPressed: roll,
+                  onPressed: () {
+                    roll();
+                    count();
+                  },
                   child: const Text(
                     'Roll',
                     style: TextStyle(fontSize: 20, fontStyle: FontStyle.italic),
@@ -105,10 +115,10 @@ class _double_diceState extends State<double_dice>
                 children: [
                   const Text(
                     'Total Count',
-                    style: TextStyle(fontSize: 18),
+                    style: TextStyle(fontSize: 24),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(padding),
+                    padding: EdgeInsets.all(padding / 2),
                     child: Container(
                       width: 100,
                       height: 50,
@@ -123,7 +133,11 @@ class _double_diceState extends State<double_dice>
                           color: Color.fromARGB(255, 244, 244, 244),
                           borderRadius:
                               BorderRadius.all(Radius.circular(10.0))),
-                      child: const Center(child: Text('count')),
+                      child: Center(
+                          child: Text(
+                        '$totalcount',
+                        style: const TextStyle(fontSize: 24),
+                      )),
                     ),
                   )
                 ],
