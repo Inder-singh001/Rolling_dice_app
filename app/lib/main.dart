@@ -102,16 +102,9 @@ class _MyhomepageState extends State<Myhomepage> with TickerProviderStateMixin {
       ),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 31, 124, 91),
-        title: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Rolling Dice',
-                style: TextStyle(fontSize: 28),
-              ),
-            ],
-          ),
+        title: Text(
+          'Rolling Dice',
+          style: TextStyle(fontSize: 28),
         ),
       ),
       body: LayoutBuilder(builder: (context, constraints) {

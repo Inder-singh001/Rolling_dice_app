@@ -51,11 +51,9 @@ class _double_diceState extends State<double_dice>
       backgroundColor: const Color.fromARGB(219, 255, 255, 255),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 31, 124, 91),
-        title: const Center(
-          child: Text(
-            'Rolling Dice',
-            style: TextStyle(fontSize: 28),
-          ),
+        title: const Text(
+          'Rolling Dice',
+          style: TextStyle(fontSize: 28),
         ),
       ),
       body: Center(
