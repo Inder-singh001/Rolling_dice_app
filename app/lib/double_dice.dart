@@ -45,7 +45,8 @@ class _double_diceState extends State<double_dice>
   Widget build(BuildContext context) {
     double pixelratio = MediaQuery.of(context).devicePixelRatio;
     double padding = pixelratio * 8;
-    double _size = 180;
+    double size = 180;
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(219, 255, 255, 255),
       appBar: AppBar(
@@ -65,8 +66,8 @@ class _double_diceState extends State<double_dice>
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: _size,
-                  height: _size,
+                  width: size,
+                  height: size,
                   padding: EdgeInsets.all(padding),
                   child: RotationTransition(
                       turns: _animation,
@@ -74,8 +75,8 @@ class _double_diceState extends State<double_dice>
                           Image.asset('assets/images/dice-$leftdicenum.png')),
                 ),
                 Container(
-                    width: _size,
-                    height: _size,
+                    width: size,
+                    height: size,
                     padding: EdgeInsets.all(padding),
                     child: RotationTransition(
                         turns: _animation,

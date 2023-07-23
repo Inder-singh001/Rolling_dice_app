@@ -42,6 +42,9 @@ class _single_diceState extends State<single_dice>
 
   @override
   Widget build(BuildContext context) {
+    double pixelratio = MediaQuery.of(context).devicePixelRatio;
+    double padding = pixelratio * 8;
+    double size = 250;
     return Scaffold(
       backgroundColor: const Color.fromARGB(219, 255, 255, 255),
       appBar: AppBar(
@@ -61,10 +64,9 @@ class _single_diceState extends State<single_dice>
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 250,
-                  height: 250,
-                  padding: const EdgeInsets.all(12.0),
-                  // margin: const EdgeInsets.all(15.0),
+                  width: size,
+                  height: size,
+                  padding: EdgeInsets.all(padding),
                   child: RotationTransition(
                       turns: _animation,
                       child: Image.asset('assets/images/dice-$dicenum.png')),
@@ -72,7 +74,7 @@ class _single_diceState extends State<single_dice>
               ],
             ),
             Padding(
-              padding: const EdgeInsets.all(30.0),
+              padding: EdgeInsets.all(padding * 2),
               child: SizedBox(
                 width: 100,
                 child: ElevatedButton(
