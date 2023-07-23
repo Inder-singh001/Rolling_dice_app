@@ -68,13 +68,13 @@ class _MyhomepageState extends State<Myhomepage> with TickerProviderStateMixin {
   // }
 
   double _size = 150;
-  bool _large = false;
-  void _updateSize() {
-    setState(() {
-      _size = _large ? 250 : 150;
-      _large = !_large;
-    });
-  }
+  // bool _large = false;
+  // void _updateSize() {
+  //   setState(() {
+  //     _size = _large ? 250 : 150;
+  //     _large = !_large;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -131,34 +131,28 @@ class _MyhomepageState extends State<Myhomepage> with TickerProviderStateMixin {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   InkWell(
-                    child: MouseRegion(
-                      onEnter: (event) => _updateSize(),
-                      onExit: (event) => _updateSize(),
-                      onHover: (event) => _updateSize(),
-                      cursor: SystemMouseCursors.click,
-                      child: AnimatedSize(
-                        curve: Curves.elasticOut,
-                        duration: Duration(seconds: 1),
-                        child: Container(
-                          width: _size,
-                          height: _size,
-                          decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 255, 255, 255),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(padding)),
-                            border: Border.all(
-                                strokeAlign: BorderSide.strokeAlignOutside,
-                                style: BorderStyle.solid,
-                                width: pixelratio * 4,
-                                color: Color.fromARGB(44, 38, 37, 39)),
-                          ),
-                          margin: EdgeInsets.all(padding),
-                          padding: EdgeInsets.all(padding),
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                            padding: EdgeInsets.all(padding / 10),
-                            child: Image.asset('assets/images/dice.png'),
-                          ),
+                    child: AnimatedSize(
+                      curve: Curves.elasticOut,
+                      duration: Duration(seconds: 1),
+                      child: Container(
+                        width: _size,
+                        height: _size,
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(padding)),
+                          border: Border.all(
+                              strokeAlign: BorderSide.strokeAlignOutside,
+                              style: BorderStyle.solid,
+                              width: pixelratio * 4,
+                              color: Color.fromARGB(44, 38, 37, 39)),
+                        ),
+                        margin: EdgeInsets.all(padding),
+                        padding: EdgeInsets.all(padding),
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: EdgeInsets.all(padding / 10),
+                          child: Image.asset('assets/images/dice.png'),
                         ),
                       ),
                     ),
