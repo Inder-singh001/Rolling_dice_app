@@ -63052,7 +63052,7 @@ A.tf.prototype={
 am(){return new A.JA(null,null,B.j)}}
 A.JA.prototype={
 N(a){var s=null,r=A.ah(219,255,255,255),q=A.ah(197,254,255,255),p=t.F
-p=A.a([A.i9(new A.Cs(A.i9(A.Ah(A.a([A.FW("version",A.mb(s,s,s,s,s,s,s,s,s,s,s,24,s,s,s,s,s,!0,s,s,s,s,s,s,s,s)),A.FW("v1.0.1",s)],p),B.fU),s,s),s),s,s)],p)
+p=A.a([A.i9(new A.Cs(A.i9(A.Ah(A.a([A.FW("version",A.mb(s,s,s,s,s,s,s,s,s,s,s,24,s,s,s,s,s,!0,s,s,s,s,s,s,s,s)),A.FW("v2.1.1",s)],p),B.fU),s,s),s),s,s)],p)
 return A.a8Z(A.a7S(A.ah(255,31,124,91),A.FW("Rolling Dice",A.mb(s,s,s,s,s,s,s,s,s,s,s,28,s,s,s,s,s,!0,s,s,s,s,s,s,s,s))),r,new A.Cm(new A.a3L(this),s),new A.D7(q,p,s))}}
 A.a3L.prototype={
 $2(a,b){var s,r,q,p,o,n,m,l=null,k=A.cg(a,l,t.w).w.b,j=k*8,i=b.b,h=b.d,g=this.a,f=i<h?i/3:h/3
